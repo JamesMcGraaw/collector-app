@@ -16,4 +16,3 @@ $modernBurn = $deckDAO->fetch(2);
 echo '<pre>';
 print_r($modernBurn);
 echo '</pre>';
-
