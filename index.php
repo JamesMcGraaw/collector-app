@@ -1,4 +1,3 @@
-
 <?php
 require_once 'DeckDAO.php';
 $deckDao = new DeckDao();
@@ -26,8 +25,8 @@ $decks = $deckDao->fetchAll();
 <body>
 
 <header class="title">
-    <h1>Magic: The Gathering</h1>
-    <h1>A collection</h1>
+    <h1 id="main-title">Magic: The Gathering</h1>
+    <h1 id="sub-title">A collection</h1>
 </header>
 
 <section class="collection">
@@ -39,7 +38,7 @@ $decks = $deckDao->fetchAll();
             '<div class="deck-card">'
                . '<div id="deck-name"><h1>' . $deck->getName() . '</h1></div>'
                . '<div class="row-1">'
-                    . '<div id="format">' . $deck->getFormat() . '</div>'
+                    . '<div id="format">Format: ' . $deck->getFormat() . '</div>'
                     . '<div id="colour-id">Colour ID: ' . $deck->getColourID() . '</div>'
                 . '</div>'
                 . '<div id="deck-image"><img src="' . $deck->getImage() . '" alt="A picture of the deck"></div>'
