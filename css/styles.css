@@ -11,3 +11,107 @@ img {
   width: 100%;
   height: auto;
 }
+
+.title {
+    margin: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+h1 {
+    margin-bottom: 0;
+    margin-top: 0.5rem;
+}
+
+.collection {
+    width: 95vw;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 0.2rem;
+    text-align: center;
+}
+
+.deck-card {
+    width: 95%;
+    border: 0.2rem solid black;
+    border-radius: 0.2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+}
+
+hr {
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 30%;
+}
+
+#deck-name {
+    width: 90%;
+    margin: auto;
+
+}
+
+.row-1 {
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: stretch;
+}
+
+#format {
+    margin: auto;
+}
+
+#colour-id {
+    margin: auto;
+}
+
+#deck-image {
+    margin: auto;
+    width: 90%;
+    height: auto;
+}
+
+#deck-description {
+    width: 80%;
+    margin: 0.5rem auto;
+    padding: 0.1rem;
+    justify-content: space-evenly;
+}
+
+.row-2 {
+    margin: 0.5rem auto;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 25% 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+#archetype {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+}
+
+#moxfield-link {
+    margin: auto;
+    width: 25%;
+}
+
+#last-updated {
+
+}
+
+@media only screen and (min-width: 1000px) {
+    .title {
+        grid-template-columns: 1fr 1fr;
+    }
+    .collection {
+        grid-template-columns: 1fr 1fr 1fr;
+}
