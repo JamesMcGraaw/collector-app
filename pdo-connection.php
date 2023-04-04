@@ -2,7 +2,7 @@
 
 const HOST = 'db';
 const USER = 'root';
-const password = 'password';
+const PASSWORD = 'password';
 const CHARSET = 'utf8mb4';
 
 
@@ -17,7 +17,7 @@ function connectToDb(string $db): PDO
     ];
 
     try {
-        $pdo = new PDO($dsn, USER, password, $options);
+        $pdo = new PDO($dsn, USER, PASSWORD, $options);
     } catch (PDOException $exception) {
         echo '<p>There was an error connecting to the db</p>';
         exit();

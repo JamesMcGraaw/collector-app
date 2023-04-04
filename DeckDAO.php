@@ -44,4 +44,28 @@ class DeckDAO
         }
         return $decks;
     }
+
+    public function add(Deck $deck): int
+    {
+        $sql = 'INSERT INTO
+                            `decks` (`name_of_deck`, `last_updated`, `primer`, `image`, `moxfield_link`, `archetype`, 
+                                    `colourid`, `format`) '
+            . 'VALUES (:name_of_deck, :last_updated, :primer, :image, :moxfield_link, :archetype, :colourid, :format); ';
+
+        $values = [
+            'name_of_deck' => $deck->getName(),
+            'last_updated' => $deck->getLastUpdated(),
+            'primer' => $deck->getPrimer(),
+            'image' => $deck->getImage(),
+            'moxfield_link' => $deck->getMoxfieldLink(),
+            'archetype' => $deck->getArchetype(),
+            'colourid' => $deck->getColourID(),
+            'format' => $deck->getFormat()
+        ];
+
+        $query = $this->db->prepare($sql);
+        $query->execute($values);
+
+        return $this->db->lastInsertId();
+    }
 }

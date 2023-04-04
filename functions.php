@@ -5,7 +5,7 @@ function intToBritDate(string $intDate): string {
     return date("d M Y", $timestamp);
 }
 
-function displayDeck($decks): string {
+function displayDeck(array $decks): string {
     $html = '';
     foreach ($decks as $deck) {
         $html .=
