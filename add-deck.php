@@ -39,6 +39,7 @@ $decks = $deckDao->fetchAll();
     <form>
         <label  for="name_of_deck">Name the deck: </label>
             <input type="text" id="name_of_deck" name="name_of_deck" value=""><br>
+
         <label for="format">What format is it?: </label>
             <input type="radio" id="commander" name="format" value="1">
             <label for="commander">Commander</label>
@@ -48,6 +49,7 @@ $decks = $deckDao->fetchAll();
             <label for="pauper">Pauper</label>
             <input type="radio" id="pedh" name="format" value="4">
             <label for="pedh">pEDH</label><br>
+
 <!--Just realised after having written this could do this as a function from database, don't @ me-->
         <label for="colourid">What colour ID does the deck have?: </label>
             <select id="colourid">
@@ -86,16 +88,21 @@ $decks = $deckDao->fetchAll();
                 <option value="32">5 Colour</option>
             </select><br>
 <!--Do code to go through database for above and use again below for archetypes-->
+
         <label for="last-updated">Deck last updated:</label>
             <input type="date" id="last-updated" name="last-updated"><br>
+
         <label  for="primer">Write a short description of the deck's strategy: </label>
             <input type="text" id="primer" name="primer" value=""><br>
+
         <label for="image">Enter a URL for a deck image (HTTPS):</label>
             <input type="deck-image" name="image" id="image" placeholder="https://www.google.com/imghp?hl=en"
                pattern="https://.*"><br>
+
         <label for="moxfield-link">Enter a URL for Moxfield (HTTPS):</label>
             <input type="moxfield-link" name="moxfield-link" id="moxfield-link" placeholder="https://moxfield.com"
                pattern="https://.*"><br>
+        
        <input type="submit" value="Submit">
     </form>
 
