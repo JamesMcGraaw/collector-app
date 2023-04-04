@@ -39,42 +39,36 @@ h1 {
     margin-bottom: 1rem;
     border: 0.2rem solid #000000;
     border-radius: 0.2rem;
-    display: grid;
-    grid-template-columns: 1fr;
     justify-items: stretch;
     background-color: #E7AC16E6;
 }
 
-.deck-name {
-    width: 90%;
+.format .colour-id .row-1 .deck-image .moxfield-link {
     margin: auto;
+}
 
+.deck-name {
+    margin: auto;
+    width: 90%;
+    height: 4rem;
 }
 
 .row-1 {
     width: 100%;
-    margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: stretch;
 }
 
-.format {
-    margin: auto;
-}
-
-.colour-id {
-    margin: auto;
-}
-
 .deck-image {
-    margin: auto;
     width: 90%;
+    margin: auto;
     height: auto;
 }
 
 .deck-description {
     width: 80%;
+    height: 5rem;
     margin: 0.5rem auto;
     padding: 0.1rem;
     justify-content: space-evenly;
@@ -82,9 +76,9 @@ h1 {
 
 .row-2 {
     margin: 0.5rem auto;
-    width: 80%;
+    width: 100%;
     display: grid;
-    grid-template-columns: 40% 25% 35%;
+    grid-template-columns: 40% 20% 40%;
     justify-items: center;
     align-items: center;
 }
@@ -93,11 +87,6 @@ h1 {
     display: grid;
     grid-template-rows: 1fr 1fr;
     justify-items: center;
-}
-
-.moxfield-link {
-    margin: auto;
-    width: 100%;
 }
 
 .last-updated {
