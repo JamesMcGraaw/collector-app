@@ -1,13 +1,115 @@
 *, *::before, *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
     padding: 0;
+    background-image: radial-gradient(#2E4CF5, #4B91F2);
+    font-family: 'Special Elite', cursive;
 }
 
 img {
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: auto;
+}
+
+header {
+    margin: 4rem 2rem 2rem;
+}
+
+h1 {
+    margin-top: 0.5rem;
+    text-align: center;
+
+}
+
+.collection {
+    width: 95vw;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.deck-card {
+    width: 95%;
+    margin-bottom: 1rem;
+    border: 0.2rem solid #000000;
+    border-radius: 0.2rem;
+    justify-items: stretch;
+    background-color: #E7AC16E6;
+}
+
+.format .colour-id .row-1 .deck-image .moxfield-link {
+    margin: auto;
+}
+
+.deck-name {
+    margin: auto;
+    width: 90%;
+    height: 4rem;
+}
+
+.row-1 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: stretch;
+}
+
+.deck-image {
+    width: 90%;
+    margin: auto;
+    height: auto;
+}
+
+.deck-description {
+    width: 80%;
+    height: 5rem;
+    margin: 0.5rem auto;
+    padding: 0.1rem;
+    justify-content: space-evenly;
+}
+
+.row-2 {
+    margin: 0.5rem auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+    justify-items: center;
+    align-items: center;
+}
+
+.archetype {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+}
+
+.last-updated {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media only screen and (min-width: 600px) {
+    .title {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .collection {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .title {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .collection {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
