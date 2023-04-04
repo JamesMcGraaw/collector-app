@@ -1,8 +1,12 @@
 <?php
 require_once 'DeckDAO.php';
 require_once 'functions.php';
+require_once 'Colourid.php';
+require_once 'ColouridDAO.php';
 $deckDao = new DeckDao();
+$colouridDAO = new ColouridDAO();
 $decks = $deckDao->fetchAll();
+$colourids = $colouridDAO->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,38 +58,9 @@ $decks = $deckDao->fetchAll();
         <label for="colourid">What colour ID does the deck have?: </label>
             <select id="colourid">
                 <option value="">--Please select an option--</option>
-                <option value="1">Mono White</option>
-                <option value="2">Mono Blue</option>
-                <option value="3">Mono Black</option>
-                <option value="4">Mono Red</option>
-                <option value="5">Mono Green</option>
-                <option value="6">Colourless</option>
-                <option value="7">Azorius</option>
-                <option value="8">Dimir</option>
-                <option value="9">Rakdos</option>
-                <option value="10">Gruul</option>
-                <option value="11">Selesnya</option>
-                <option value="12">Orzhov</option>
-                <option value="13">Izzet</option>
-                <option value="14">Golgari</option>
-                <option value="15">Boros</option>
-                <option value="16">Simic</option>
-                <option value="17">Bant</option>
-                <option value="18">Esper</option>
-                <option value="19">Grixis</option>
-                <option value="20">Jund</option>
-                <option value="21">Naya</option>
-                <option value="22">Abzan</option>
-                <option value="23">Jeskai</option>
-                <option value="24">Sultai</option>
-                <option value="25">Mardu</option>
-                <option value="26">Temur</option>
-                <option value="27">Glint</option>
-                <option value="28">Dune</option>
-                <option value="29">Ink</option>
-                <option value="30">Witch</option>
-                <option value="31">Yore</option>
-                <option value="32">5 Colour</option>
+                <?php
+                echo populateDropDownColourID($colourids);
+                ?>
             </select><br>
 <!--Do code to go through database for above and use again below for archetypes-->
 
@@ -102,7 +77,7 @@ $decks = $deckDao->fetchAll();
         <label for="moxfield-link">Enter a URL for Moxfield (HTTPS):</label>
             <input type="moxfield-link" name="moxfield-link" id="moxfield-link" placeholder="https://moxfield.com"
                pattern="https://.*"><br>
-        
+
        <input type="submit" value="Submit">
     </form>
 
