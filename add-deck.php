@@ -28,19 +28,15 @@ $decks = $deckDao->fetchAll();
 </head>
 
 <body>
-<header>
-    <h1>Magic: The Gathering &nbsp;-&nbsp; A collection</h1>
-</header>
-<section class="collection">
-    <?php
-        echo displayDeck($decks);
-    ?>
-</section>
-<footer>
-    <p>
-        <a href="add-deck.php">WHAT YOU BOUGHT ANOTHER DECK??</a>
-    </p>
-</footer>
+    <header>
+        <a href="index.php">Go back home</a>
+    </header>
+
+    <h1>
+        Add a new deck:
+    </h1>
+
+
 
 </body>
 </html>
