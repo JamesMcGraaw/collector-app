@@ -49,7 +49,9 @@ $archetypes = $archetypeDAO->fetchAll();
             <label for="name_of_deck">
                 Name the deck:
             </label>
+            <p>
             <input type="text" id="name_of_deck" name="name_of_deck" value="" required>
+            </p>
         </p>
             <fieldset>
             <legend>What format is it?: </legend>
@@ -66,6 +68,7 @@ $archetypes = $archetypeDAO->fetchAll();
             </fieldset>
         <p>
             <label for="colourid">What colour ID does the deck have?: </label>
+        <p>
             <select name="colourid" id="colourid" required>
                 <option value="">--Please select an option--</option>
                 <?php
@@ -73,8 +76,10 @@ $archetypes = $archetypeDAO->fetchAll();
                 ?>
             </select>
         </p>
+        </p>
         <p>
             <label for="archetype">What type of gameplay does it have?: </label>
+        <p>
             <select name="archetype" id="archetype" required>
                 <option value="">--Please select an option--</option>
                 <?php
@@ -82,21 +87,30 @@ $archetypes = $archetypeDAO->fetchAll();
                 ?>
             </select>
         </p>
+        </p>
         <p>
             <label for="last_updated">Deck last updated:</label>
+        <p>
             <input type="date" id="last_updated" name="last_updated" required>
+        </p>
         </p>
         <p>
             <label for="primer">Write a description of the strategy: </label>
+        <p>
             <input type="text" id="primer" name="primer" value="&nbsp;" required>
+        </p>
         </p>
         <p>
             <label for="image">Enter a URL for a deck image (HTTPS):</label>
-            <input name="image" id="image" pattern="https://.*" value="" required><br>
+        <p>
+            <input name="image" id="image" pattern="https://.*" value="" required>
+        </p>
         </p>
         <p>
             <label for="moxfield-link">Enter a URL for Moxfield (HTTPS):</label>
+        </p>
             <input name="moxfield_link" id="moxfield-link" pattern="https://.*" value="" required><br>
+        </p>
         </p>
         <p>
             <input type="submit" value="Submit">

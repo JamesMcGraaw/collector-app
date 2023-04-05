@@ -42,7 +42,7 @@ $decks = $deckDAO->fetchAll();
     <h1>Magic: The Gathering &nbsp;-&nbsp; A collection</h1>
 </header>
 <p class="link">
-    <a href="add-deck.php">You bought another deck?! Add it here I guess...</a>
+    <a href="add-deck.php">You bought another deck?! Add it here...</a>
 </p>
 <section class="collection">
     <?php
