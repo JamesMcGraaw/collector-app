@@ -1,6 +1,7 @@
 <?php
 require_once 'pdo-connection.php';
 require_once 'Colourid.php';
+
 class ColouridDAO
 {
     private PDO $db;
@@ -10,7 +11,7 @@ class ColouridDAO
         $this->db = connectToDb('collectorapp');
     }
 
-        public function fetchAll(): array
+    public function fetchAll(): array
     {
         $sql = 'SELECT
                     `id`, `colourid`'

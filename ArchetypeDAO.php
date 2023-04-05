@@ -1,6 +1,7 @@
 <?php
 require_once 'pdo-connection.php';
 require_once 'Archetype.php';
+
 class ArchetypeDAO
 {
     private PDO $db;
@@ -10,7 +11,7 @@ class ArchetypeDAO
         $this->db = connectToDb('collectorapp');
     }
 
-        public function fetchAll(): array
+    public function fetchAll(): array
     {
         $sql = 'SELECT
                     `id`, `archetype`'

@@ -36,22 +36,22 @@ $archetypes = $archetypeDAO->fetchAll();
 </head>
 
 <body>
-    <header>
-        <a href="index.php">Go back home</a>
-    </header>
+<header>
+    <a href="index.php">Go back home</a>
+</header>
 
-    <h1>
-        Add a new deck:
-    </h1>
+<h1>
+    Add a new deck:
+</h1>
 
-    <div class="add-deck">
+<div class="add-deck">
     <form action="index.php" method="post">
         <p>
-        <label>Name the deck: </label>
+            <label>Name the deck: </label>
             <input type="text" id="name_of_deck" name="name_of_deck" value="">
         </p>
         <p>
-        <label>What format is it?: </label><br>
+            <label>What format is it?: </label><br>
             <input type="radio" id="commander" name="format" value="1">
             <label for="commander">Commander</label>
             <input type="radio" id="modern" name="format" value="2">
@@ -62,7 +62,7 @@ $archetypes = $archetypeDAO->fetchAll();
             <label for="pedh">pEDH</label>
         </p>
         <p>
-        <label>What colour ID does the deck have?: </label>
+            <label>What colour ID does the deck have?: </label>
             <select name="colourid">
                 <option value="">--Please select an option--</option>
                 <?php
@@ -71,37 +71,37 @@ $archetypes = $archetypeDAO->fetchAll();
             </select>
         </p>
         <p>
-        <label>What type of gameplay does it have?: </label>
-        <select  name="archetype" id="archetype">
-            <option value="">--Please select an option--</option>
-            <?php
-            echo populateDropDownArchetypes($archetypes);
-            ?>
-        </select>
+            <label>What type of gameplay does it have?: </label>
+            <select name="archetype" id="archetype">
+                <option value="">--Please select an option--</option>
+                <?php
+                echo populateDropDownArchetypes($archetypes);
+                ?>
+            </select>
         </p>
         <p>
-        <label>Deck last updated:</label>
+            <label>Deck last updated:</label>
             <input type="date" id="last-updated" name="last_updated"><br>
         </p>
         <p>
-        <label>Write a description of the strategy: </label>
+            <label>Write a description of the strategy: </label>
             <input type="text" id="primer" name="primer" value=""><br>
         </p>
         <p>
-        <label>Enter a URL for a deck image (HTTPS):</label>
+            <label>Enter a URL for a deck image (HTTPS):</label>
             <input name="image" id="image" placeholder="https://www.google.com/imghp?hl=en"
-               pattern="https://.*"><br>
+                   pattern="https://.*"><br>
         </p>
         <p>
-        <label>Enter a URL for Moxfield (HTTPS):</label>
+            <label>Enter a URL for Moxfield (HTTPS):</label>
             <input name="moxfield_link" id="moxfield-link" placeholder="https://moxfield.com"
-               pattern="https://.*"><br>
+                   pattern="https://.*"><br>
         </p>
         <p>
-       <input type="submit" value="Submit">
+            <input type="submit" value="Submit">
         </p>
     </form>
-    </div>
+</div>
 
 </body>
 </html>
