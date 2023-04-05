@@ -1,8 +1,18 @@
 <?php
 require_once 'DeckDAO.php';
 require_once 'functions.php';
-$deckDao = new DeckDao();
-$decks = $deckDao->fetchAll();
+$deckDAO = new DeckDAO();
+if (isset($_POST['name_of_deck'])) {
+    if (strlen($_POST['name_of_deck']) != 0 && strlen($_POST['format']) != 0 && strlen($_POST['colourid']) != 0 &&
+        strlen($_POST['archetype']) != 0 && strlen($_POST['last_updated']) != 0 && strlen($_POST['primer']) != 0 &&
+        str_starts_with($_POST['image'], 'https') && str_starts_with($_POST['moxfield_link'], 'https'))
+    {
+        $newDeck = new Deck($_POST['name_of_deck'], $_POST['format'], $_POST['colourid'], $_POST['archetype']
+            , $_POST['last_updated'], $_POST['primer'], $_POST['image'], $_POST['moxfield_link']);
+        $deckDAO->add($newDeck);
+    }
+}
+$decks = $deckDAO->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,14 +38,20 @@ $decks = $deckDao->fetchAll();
 </head>
 
 <body>
-<header>
+<header class="page-1">
     <h1>Magic: The Gathering &nbsp;-&nbsp; A collection</h1>
 </header>
+<p class="link">
+    <a href="add-deck.php">You bought another deck?! Add it here I guess...</a>
+</p>
 <section class="collection">
     <?php
-        echo displayDeck($decks);
+    echo displayDeck($decks);
     ?>
 </section>
+<footer>
+
+</footer>
 
 </body>
 </html>

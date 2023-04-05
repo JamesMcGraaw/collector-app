@@ -6,7 +6,6 @@ const PASSWORD = 'password';
 const CHARSET = 'utf8mb4';
 
 
-
 function connectToDb(string $db): PDO
 {
     $dsn = 'mysql:host=' . HOST . ";dbname=$db;charset=" . CHARSET;

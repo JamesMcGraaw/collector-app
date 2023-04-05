@@ -14,14 +14,18 @@ img {
     height: auto;
 }
 
-header {
+header.page-1 {
     margin: 4rem 2rem 2rem;
 }
 
 h1 {
     margin-top: 0.5rem;
     text-align: center;
+}
 
+.link {
+    width: 95vw;
+    margin: auto 2rem 2rem;
 }
 
 .collection {
@@ -93,6 +97,24 @@ h1 {
     display: grid;
     grid-template-columns: 1fr;
 }
+
+header.page-2 {
+    margin: 2rem;
+}
+
+.add-deck {
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+    width: 95vw;
+    background-color: #E7AC16E6;
+    display: grid;
+    justify-items: center;
+}
+
+fieldset {
+    margin: auto;
+}
+
 
 @media only screen and (min-width: 600px) {
     .title {

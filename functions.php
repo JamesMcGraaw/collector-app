@@ -1,11 +1,13 @@
 <?php
 
-function intToBritDate(string $intDate): string {
+function intToBritDate(string $intDate): string
+{
     $timestamp = strtotime($intDate);
     return date("d M Y", $timestamp);
 }
 
-function displayDeck(array $decks): string {
+function displayDeck(array $decks): string
+{
     $html = '';
     foreach ($decks as $deck) {
         $html .=
@@ -27,6 +29,26 @@ function displayDeck(array $decks): string {
             . '</div></div>'
             . '</div>'
             . '</div>';
+    }
+    return $html;
+}
+
+function populateDropDownColourID(array $colourids): string
+{
+    $html = '';
+    foreach ($colourids as $colourid) {
+        $html .=
+            '<option value="' . $colourid->getID() . '">' . $colourid->getColourID() . '</option>';
+    }
+    return $html;
+}
+
+function populateDropDownArchetypes(array $archetypes): string
+{
+    $html = '';
+    foreach ($archetypes as $archetype) {
+        $html .=
+            '<option value="' . $archetype->getID() . '">' . $archetype->getArchetype() . '</option>';
     }
     return $html;
 }
