@@ -120,7 +120,12 @@ header.page-2 {
     justify-items: center;
 }
 
+div {
+    margin: 0.5rem;
+}
+
 fieldset {
+    width: fit-content;
     margin: auto;
 }
 

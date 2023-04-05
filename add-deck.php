@@ -40,19 +40,18 @@ $archetypes = $archetypeDAO->fetchAll();
             Add a new deck:
         </h1>
         <form action="index.php" method="post">
-            <p>
+            <div>
                 <label for="name_of_deck">
                     Name the deck:
                 </label>
-            </p>
-            <p>
+            </div>
+            <div>
                 <input type="text" id="name_of_deck" name="name_of_deck" value="" required>
-            </p>
+            </div>
             <fieldset>
                 <legend>
                     What format is it?:
                 </legend>
-                <p>
                     <label for="commander">Commander</label>
                     <input type="radio" id="commander" name="format" value="1" required>
                     <label for="modern">Modern</label>
@@ -61,14 +60,13 @@ $archetypes = $archetypeDAO->fetchAll();
                     <input type="radio" id="pauper" name="format" value="3" required>
                     <label for="pedh">pEDH</label>
                     <input type="radio" id="pedh" name="format" value="4" required>
-                </p>
             </fieldset>
-            <p>
+            <div>
                 <label for="colourid">
                     What colour ID does the deck have?:
                 </label>
-            </p>
-            <p>
+            </div>
+            <div>
                 <select name="colourid" id="colourid" required>
                     <option value="">
                         --Please select an option--
@@ -77,13 +75,13 @@ $archetypes = $archetypeDAO->fetchAll();
                     echo populateDropDownColourID($colourids);
                     ?>
                     </select>
-            </p>
-            <p>
+            </div>
+            <div>
                 <label for="archetype">
                     What type of gameplay does it have?:
                 </label>
-            </p>
-            <p>
+            </div>
+            <div>
                 <select name="archetype" id="archetype" required>
                     <option value="">
                         --Please select an option--
@@ -92,36 +90,36 @@ $archetypes = $archetypeDAO->fetchAll();
                     echo populateDropDownArchetypes($archetypes);
                     ?>
                     </select>
-            </p>
-            <p>
+            </div>
+            <div>
                 <label for="last_updated">Deck last updated:</label>
-            </p>
-            <p>
+            </div>
+            <div>
                 <input type="date" id="last_updated" name="last_updated" required>
-            </p>
-            <p>
+            </div>
+            <div>
                 <label for="primer">Write a description of the strategy: </label>
-            </p>
-            <p>
+            </div>
+            <div>
                 <input type="text" id="primer" name="primer" value="&nbsp;" required>
-            </p>
-            <p>
+            </div>
+            <div>
                 <label for="image">Enter a URL for a deck image (HTTPS):</label>
-            </p>
-            <p>
+            </div>
+            <div>
                 <input name="image" id="image" pattern="https://.*" value="" required>
-            </p>
-            <p>
+            </div>
+            <div>
                 <label for="moxfield-link">
                     Enter a URL for Moxfield (HTTPS):
                 </label>
-            </p>
-            <p>
+            </div>
+            <div>
                 <input name="moxfield_link" id="moxfield-link" pattern="https://.*" value="" required>
-            </p>
-            <p>
+            </div>
+            <div>
                 <input type="submit" value="Submit">
-            </p>
+            </div>
         </form>
     </section>
 
