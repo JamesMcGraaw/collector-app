@@ -21,7 +21,11 @@ header {
 h1 {
     margin-top: 0.5rem;
     text-align: center;
+}
 
+.link {
+    width: 95vw;
+    margin: auto 2rem 2rem;
 }
 
 .collection {
@@ -92,6 +96,21 @@ h1 {
 .last-updated {
     display: grid;
     grid-template-columns: 1fr;
+}
+
+.add-deck {
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+    width: 95vw;
+    background-color: #E7AC16E6;
+    display: grid;
+    justify-items: center;
+}
+
+
+
+br form {
+    border: 2rem solid #E7AC16E6;
 }
 
 @media only screen and (min-width: 600px) {

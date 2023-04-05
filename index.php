@@ -1,8 +1,13 @@
 <?php
 require_once 'DeckDAO.php';
 require_once 'functions.php';
-$deckDao = new DeckDao();
-$decks = $deckDao->fetchAll();
+$deckDAO = new DeckDAO();
+if (isset($_POST['name_of_deck'])) {
+    $newDeck = new Deck($_POST['name_of_deck'], $_POST['format'], $_POST['colourid'], $_POST['archetype']
+        , $_POST['last_updated'], $_POST['primer'], $_POST['image'], $_POST['moxfield_link']);
+    $deckDAO->add($newDeck);
+}
+$decks = $deckDAO->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +37,7 @@ $decks = $deckDao->fetchAll();
     <h1>Magic: The Gathering &nbsp;-&nbsp; A collection</h1>
 </header>
 <p class="link">
-    <a href="add-deck.php">You bought another deck?!</a>
+    <a href="add-deck.php">You bought another deck?! Add it here I guess...</a>
 </p>
 <section class="collection">
     <?php
