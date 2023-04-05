@@ -105,12 +105,15 @@ header > h1 {
 }
 
 header.page-2 {
+    width: fit-content;
     margin: 2rem;
+    padding: 0.5rem;
+    background-color: #E7AC16E6;
 }
 
 .add-deck {
     margin: 0.5rem auto;
-    padding: 0.5rem;
+    padding: 2rem;
     width: fit-content;
     background-color: #E7AC16E6;
     display: grid;
