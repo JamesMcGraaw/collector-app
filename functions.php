@@ -30,7 +30,6 @@ function displayDeck(array $decks): string {
     }
     return $html;
 }
-// Add another argument so can reuse for both archetype and colour id
 
 function populateDropDownColourID(array $colourids): string {
     $html = '';

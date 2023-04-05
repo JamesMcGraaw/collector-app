@@ -29,5 +29,3 @@ $decks = $deckDAO->fetchAll();
 //echo '<pre>';
 //print_r($winnota);
 //echo '</pre>';
-
-
