@@ -14,7 +14,7 @@ img {
     height: auto;
 }
 
-header {
+header.page-1 {
     margin: 4rem 2rem 2rem;
 }
 
@@ -98,6 +98,10 @@ h1 {
     grid-template-columns: 1fr;
 }
 
+header.page-2 {
+    margin: 2rem;
+}
+
 .add-deck {
     margin: 0.5rem auto;
     padding: 0.5rem;
@@ -107,10 +111,6 @@ h1 {
     justify-items: center;
 }
 
-
-br form {
-    border: 2rem solid #E7AC16E6;
-}
 
 @media only screen and (min-width: 600px) {
     .title {

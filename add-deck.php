@@ -36,7 +36,7 @@ $archetypes = $archetypeDAO->fetchAll();
 </head>
 
 <body>
-<header>
+<header class="page-2">
     <a href="index.php">Go back home</a>
 </header>
 
@@ -44,26 +44,28 @@ $archetypes = $archetypeDAO->fetchAll();
     Add a new deck:
 </h1>
 
-<div class="add-deck">
+<section class="add-deck">
     <form action="index.php" method="post">
         <p>
-            <label>Name the deck: </label>
-            <input type="text" id="name_of_deck" name="name_of_deck" value="">
+            <label for="name_of_deck">
+                Name the deck:
+            </label>
+            <input type="text" id="name_of_deck" name="name_of_deck" value="" required>
         </p>
         <p>
             <label>What format is it?: </label><br>
-            <input type="radio" id="commander" name="format" value="1">
+            <input type="radio" id="commander" name="format" value="1" required>
             <label for="commander">Commander</label>
-            <input type="radio" id="modern" name="format" value="2">
+            <input type="radio" id="modern" name="format" value="2" required>
             <label for="modern">Modern</label>
-            <input type="radio" id="pauper" name="format" value="3">
+            <input type="radio" id="pauper" name="format" value="3" required>
             <label for="pauper">Pauper</label>
-            <input type="radio" id="pedh" name="format" value="4">
+            <input type="radio" id="pedh" name="format" value="4" required>
             <label for="pedh">pEDH</label>
         </p>
         <p>
-            <label>What colour ID does the deck have?: </label>
-            <select name="colourid">
+            <label for="colourid">What colour ID does the deck have?: </label>
+            <select name="colourid" id="colourid" required>
                 <option value="">--Please select an option--</option>
                 <?php
                 echo populateDropDownColourID($colourids);
@@ -71,8 +73,8 @@ $archetypes = $archetypeDAO->fetchAll();
             </select>
         </p>
         <p>
-            <label>What type of gameplay does it have?: </label>
-            <select name="archetype" id="archetype">
+            <label for="archetype">What type of gameplay does it have?: </label>
+            <select name="archetype" id="archetype" required>
                 <option value="">--Please select an option--</option>
                 <?php
                 echo populateDropDownArchetypes($archetypes);
@@ -81,27 +83,25 @@ $archetypes = $archetypeDAO->fetchAll();
         </p>
         <p>
             <label>Deck last updated:</label>
-            <input type="date" id="last-updated" name="last_updated"><br>
+            <label for="last-updated"></label><input type="date" id="last-updated" name="last_updated" required>
         </p>
         <p>
-            <label>Write a description of the strategy: </label>
-            <input type="text" id="primer" name="primer" value=""><br>
+            <label for="primer">Write a description of the strategy: </label>
+            <input type="text" id="primer" name="primer" value="&nbsp;" required>
         </p>
         <p>
-            <label>Enter a URL for a deck image (HTTPS):</label>
-            <input name="image" id="image" placeholder="https://www.google.com/imghp?hl=en"
-                   pattern="https://.*"><br>
+            <label for="image">Enter a URL for a deck image (HTTPS):</label>
+            <input name="image" id="image" pattern="https://.*" value="" required><br>
         </p>
         <p>
-            <label>Enter a URL for Moxfield (HTTPS):</label>
-            <input name="moxfield_link" id="moxfield-link" placeholder="https://moxfield.com"
-                   pattern="https://.*"><br>
+            <label for="moxfield-link">Enter a URL for Moxfield (HTTPS):</label>
+            <input name="moxfield_link" id="moxfield-link" pattern="https://.*" value="" required><br>
         </p>
         <p>
             <input type="submit" value="Submit">
         </p>
     </form>
-</div>
+</section>
 
 </body>
 </html>
