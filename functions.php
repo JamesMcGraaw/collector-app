@@ -32,11 +32,20 @@ function displayDeck(array $decks): string {
 }
 // Add another argument so can reuse for both archetype and colour id
 
-function populateDropDownColourID($colourids): string {
+function populateDropDownColourID(array $colourids): string {
     $html = '';
     foreach ($colourids as $colourid) {
         $html .=
-                '<option value="' . $colourid->getID() . '">' . $colourids->getColourID() . '</option>';
+                '<option value="' . $colourid->getID() . '">' . $colourid->getColourID() . '</option>';
+    }
+    return $html;
+}
+
+function populateDropDownArchetypes(array $archetypes): string {
+    $html = '';
+    foreach ($archetypes as $archetype) {
+        $html .=
+            '<option value="' . $archetype->getID() . '">' . $archetype->getArchetype() . '</option>';
     }
     return $html;
 }

@@ -3,10 +3,14 @@ require_once 'DeckDAO.php';
 require_once 'functions.php';
 require_once 'Colourid.php';
 require_once 'ColouridDAO.php';
+require_once 'Archetype.php';
+require_once 'ArchetypeDAO.php';
 $deckDao = new DeckDao();
 $colouridDAO = new ColouridDAO();
+$archetypeDAO = new ArchetypeDAO();
 $decks = $deckDao->fetchAll();
 $colourids = $colouridDAO->fetchAll();
+$archetypes = $archetypeDAO->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +58,7 @@ $colourids = $colouridDAO->fetchAll();
             <input type="radio" id="pedh" name="format" value="4">
             <label for="pedh">pEDH</label><br>
 
-<!--Just realised after having written this could do this as a function from database, don't @ me-->
+
         <label for="colourid">What colour ID does the deck have?: </label>
             <select id="colourid">
                 <option value="">--Please select an option--</option>
@@ -62,7 +66,14 @@ $colourids = $colouridDAO->fetchAll();
                 echo populateDropDownColourID($colourids);
                 ?>
             </select><br>
-<!--Do code to go through database for above and use again below for archetypes-->
+
+        <label for="archtype">What type of gameplay does the deck have?: </label>
+        <select id="archetype">
+            <option value="">--Please select an option--</option>
+            <?php
+            echo populateDropDownArchetypes($archetypes);
+            ?>
+        </select><br>
 
         <label for="last-updated">Deck last updated:</label>
             <input type="date" id="last-updated" name="last-updated"><br>
