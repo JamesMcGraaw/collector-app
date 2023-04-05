@@ -40,11 +40,10 @@ $archetypes = $archetypeDAO->fetchAll();
     <a href="index.php">Go back home</a>
 </header>
 
-<h1>
-    Add a new deck:
-</h1>
-
 <section class="add-deck">
+    <h1>
+        Add a new deck:
+    </h1>
     <form action="index.php" method="post">
         <p>
             <label for="name_of_deck">
@@ -52,17 +51,19 @@ $archetypes = $archetypeDAO->fetchAll();
             </label>
             <input type="text" id="name_of_deck" name="name_of_deck" value="" required>
         </p>
-        <p>
-            <label>What format is it?: </label><br>
-            <input type="radio" id="commander" name="format" value="1" required>
+            <fieldset>
+            <legend>What format is it?: </legend>
+            <p>
             <label for="commander">Commander</label>
-            <input type="radio" id="modern" name="format" value="2" required>
+            <input type="radio" id="commander" name="format" value="1" required>
             <label for="modern">Modern</label>
-            <input type="radio" id="pauper" name="format" value="3" required>
+            <input type="radio" id="modern" name="format" value="2" required>
             <label for="pauper">Pauper</label>
-            <input type="radio" id="pedh" name="format" value="4" required>
+            <input type="radio" id="pauper" name="format" value="3" required>
             <label for="pedh">pEDH</label>
-        </p>
+            <input type="radio" id="pedh" name="format" value="4" required>
+            </p>
+            </fieldset>
         <p>
             <label for="colourid">What colour ID does the deck have?: </label>
             <select name="colourid" id="colourid" required>
@@ -82,8 +83,8 @@ $archetypes = $archetypeDAO->fetchAll();
             </select>
         </p>
         <p>
-            <label>Deck last updated:</label>
-            <label for="last-updated"></label><input type="date" id="last-updated" name="last_updated" required>
+            <label for="last_updated">Deck last updated:</label>
+            <input type="date" id="last_updated" name="last_updated" required>
         </p>
         <p>
             <label for="primer">Write a description of the strategy: </label>
