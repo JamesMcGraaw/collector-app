@@ -15,17 +15,23 @@ img {
 }
 
 header.page-1 {
-    margin: 4rem 2rem 2rem;
+    margin: 2rem 1rem 1rem;
+    justify-items: center;
 }
 
-h1 {
-    margin-top: 0.5rem;
+header > h1 {
+    width: fit-content;
+    padding: 1rem;
+    background-color: #E7AC16E6;
+    margin: auto;
     text-align: center;
 }
 
 .link {
-    width: 95vw;
-    margin: auto 2rem 2rem;
+    width: fit-content;
+    margin: 2rem auto;
+    padding: 0.5rem;
+    background-color: #E7AC16E6;
 }
 
 .collection {
@@ -99,19 +105,27 @@ h1 {
 }
 
 header.page-2 {
+    width: fit-content;
     margin: 2rem;
+    padding: 0.5rem;
+    background-color: #E7AC16E6;
 }
 
 .add-deck {
     margin: 0.5rem auto;
-    padding: 0.5rem;
-    width: 95vw;
+    padding: 2rem;
+    width: fit-content;
     background-color: #E7AC16E6;
     display: grid;
     justify-items: center;
 }
 
+div {
+    margin: 0.5rem;
+}
+
 fieldset {
+    width: fit-content;
     margin: auto;
 }
 
