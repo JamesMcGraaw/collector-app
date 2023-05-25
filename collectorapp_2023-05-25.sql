@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.5-10.11.3-MariaDB-1:10.11.3+maria~ubu2204)
 # Database: collectorapp
-# Generation Time: 2023-05-25 08:09:02 +0000
+# Generation Time: 2023-05-25 08:11:21 +0000
 # ************************************************************
 
 
@@ -20,21 +20,21 @@ SET NAMES utf8mb4;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
-# Dump of table archetype
+# Dump of table archetypes
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `archetype`;
+DROP TABLE IF EXISTS `archetypes`;
 
-CREATE TABLE `archetype` (
+CREATE TABLE `archetypes` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `gameplaystyle` varchar(255) NOT NULL,
+  `archetype` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-LOCK TABLES `archetype` WRITE;
-/*!40000 ALTER TABLE `archetype` DISABLE KEYS */;
+LOCK TABLES `archetypes` WRITE;
+/*!40000 ALTER TABLE `archetypes` DISABLE KEYS */;
 
-INSERT INTO `archetype` (`id`, `gameplaystyle`)
+INSERT INTO `archetypes` (`id`, `archetype`)
 VALUES
 	(1,'Enchantments'),
 	(2,'Equipment'),
@@ -65,7 +65,7 @@ VALUES
 	(27,'Aristocrats'),
 	(28,'Lifegain');
 
-/*!40000 ALTER TABLE `archetype` ENABLE KEYS */;
+/*!40000 ALTER TABLE `archetypes` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
@@ -141,7 +141,7 @@ CREATE TABLE `decks` (
   KEY `fk_archetype` (`archetype`),
   KEY `fk_colourid` (`colourid`),
   KEY `fk_formats` (`format`),
-  CONSTRAINT `fk_archetype` FOREIGN KEY (`archetype`) REFERENCES `archetype` (`id`),
+  CONSTRAINT `fk_archetype` FOREIGN KEY (`archetype`) REFERENCES `archetypes` (`id`),
   CONSTRAINT `fk_colourid` FOREIGN KEY (`colourid`) REFERENCES `colourid` (`id`),
   CONSTRAINT `fk_formats` FOREIGN KEY (`format`) REFERENCES `formats` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
