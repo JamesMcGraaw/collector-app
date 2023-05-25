@@ -15,7 +15,7 @@ class DeckDAO
     {
         $sql = 'SELECT
                     `decks`.`id`, `decks`.`name_of_deck`, `decks`.`last_updated`, `decks`.`primer`,
-                    `decks`.`image`, `decks`.`moxfield_link`, `archetype`.`gameplaystyle`, `colourid`.
+                    `decks`.`image`, `decks`.`moxfield_link`, `archetypes`.`archetype`, `colourid`.
                     `colourid`, `formats`.`format`'
             . 'FROM
                     `decks`'
@@ -28,9 +28,9 @@ class DeckDAO
             . 'ON
                     `decks`.`colourid` = `colourid`.`id`'
             . 'INNER JOIN
-                    `archetype`'
+                    `archetypes`'
             . 'ON
-                    `decks`.`archetype` = `archetype`.`id`';
+                    `decks`.`archetype` = `archetypes`.`id`';
 
 
         $query = $this->db->prepare($sql);
@@ -39,7 +39,7 @@ class DeckDAO
 
         $decks = [];
         foreach ($rows as $row) {
-            $decks[] = new Deck($row['name_of_deck'], $row['format'], $row['colourid'], $row['gameplaystyle']
+            $decks[] = new Deck($row['name_of_deck'], $row['format'], $row['colourid'], $row['archetype']
                 , $row['last_updated'], $row['primer'], $row['image'], $row['moxfield_link'], $row['id']);
         }
         return $decks;
@@ -48,19 +48,19 @@ class DeckDAO
     public function add(Deck $deck): int
     {
         $sql = 'INSERT INTO
-                            `decks` (`name_of_deck`, `last_updated`, `primer`, `image`, `moxfield_link`, `archetype`, 
-                                    `colourid`, `format`) '
-            . 'VALUES (:name_of_deck, :last_updated, :primer, :image, :moxfield_link, :archetype, :colourid, :format); ';
+                            `decks` (`name_of_deck`, `format`, `colourid`, `archetype`, `last_updated`, `primer`
+                            , `image`, `moxfield_link`) '
+            . 'VALUES (:name_of_deck, :format, :colourid, :archetype, :last_updated, :primer, :image, :moxfield_link); ';
 
         $values = [
             'name_of_deck' => $deck->getName(),
+            'format' => $deck->getFormat(),
+            'colourid' => $deck->getColourID(),
+            'archetype' => $deck->getArchetype(),
             'last_updated' => $deck->getLastUpdated(),
             'primer' => $deck->getPrimer(),
             'image' => $deck->getImage(),
             'moxfield_link' => $deck->getMoxfieldLink(),
-            'archetype' => $deck->getArchetype(),
-            'colourid' => $deck->getColourID(),
-            'format' => $deck->getFormat()
         ];
 
         $query = $this->db->prepare($sql);

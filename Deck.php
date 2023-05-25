@@ -16,7 +16,7 @@ class Deck
 
 
     public function __construct(
-        string $name, string $format, string $colourID, string $archetype, string $last_updated
+        string   $name, string $format, string $colourID, string $archetype, string $last_updated
         , string $primer, string $image, string $moxfield_link, int $id = -1
     )
     {
@@ -31,6 +31,17 @@ class Deck
         $this->moxfield_link = $moxfield_link;
 
     }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
 
     public function getName(): string
     {
